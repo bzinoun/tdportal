@@ -1,0 +1,40 @@
+
+entity Article {
+	title String required ,
+    description String ,
+    content TextBlob required ,
+    image ImageBlob ,
+    creationDate Instant , 	
+    modificationDate Instant	
+}
+
+entity Category {
+	name String required ,
+    description String ,
+    image ImageBlob 
+}
+
+entity Member {
+
+	firstName String,
+	lastName String,
+	email String,
+	phoneNumber String,
+    refogID String
+}
+relationship OneToMany {
+	Category{category} to Article
+    Member{author} to Article	
+}
+
+// Set pagination options
+paginate Article with infinite-scroll
+
+// Use Data Transfert Objects (DTO)
+ dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl
+
+// Set an angular suffix
+// angularSuffix * with mySuffix

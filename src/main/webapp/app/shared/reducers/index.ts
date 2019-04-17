@@ -7,6 +7,18 @@ import applicationProfile, { ApplicationProfileState } from './application-profi
 
 import administration, { AdministrationState } from 'app/modules/administration/administration.reducer';
 import userManagement, { UserManagementState } from './user-management';
+// prettier-ignore
+import article, {
+  ArticleState
+} from 'app/entities/article/article.reducer';
+// prettier-ignore
+import category, {
+  CategoryState
+} from 'app/entities/category/category.reducer';
+// prettier-ignore
+import member, {
+  MemberState
+} from 'app/entities/member/member.reducer';
 /* jhipster-needle-add-reducer-import - JHipster will add reducer here */
 
 export interface IRootState {
@@ -15,6 +27,9 @@ export interface IRootState {
   readonly applicationProfile: ApplicationProfileState;
   readonly administration: AdministrationState;
   readonly userManagement: UserManagementState;
+  readonly article: ArticleState;
+  readonly category: CategoryState;
+  readonly member: MemberState;
   /* jhipster-needle-add-reducer-type - JHipster will add reducer type here */
   readonly loadingBar: any;
 }
@@ -25,6 +40,9 @@ const rootReducer = combineReducers<IRootState>({
   applicationProfile,
   administration,
   userManagement,
+  article,
+  category,
+  member,
   /* jhipster-needle-add-reducer-combine - JHipster will add reducer here */
   loadingBar
 });
